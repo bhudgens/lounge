@@ -56,7 +56,7 @@ module.exports = {
 	// @type     string
 	// @default  "example"
 	//
-	theme: "example",
+	theme: "morning",
 
 	//
 	// Prefetch URLs
