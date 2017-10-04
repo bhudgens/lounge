@@ -228,10 +228,11 @@ function index(req, res, next) {
 
 	res.setHeader("Content-Security-Policy", policies.join("; "));
 	res.setHeader("Referrer-Policy", "no-referrer");
+	/** TODO: Hacks for Starphleet - Need to port over to orders */
 	const _nick = req.headers["x-glgauthuser"];
 	data.defaults.nick = _nick;
 	data.defaults.realname = _nick;
-	data.defaults.join = "#FireFighter,#TechTeam";
+	data.defaults.join = "#FireFighter,#TechTeam, #Clu";
 	res.render("index", data);
 }
 
