@@ -498,13 +498,13 @@ module.exports = {
 		// @type     boolean
 		// @default  false
 		//
-		ircFramework: true,
+		ircFramework: false,
 
 		// Enables logging raw IRC messages into each server window.
 		//
 		// @type     boolean
 		// @default  false
 		//
-		raw: true,
+		raw: false,
 	},
 };
