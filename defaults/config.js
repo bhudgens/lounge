@@ -10,7 +10,7 @@ module.exports = {
 	// @type     boolean
 	// @default  false
 	//
-	public: false,
+	public: true,
 
 	//
 	// IP address or hostname for the web server to listen on.
@@ -67,7 +67,7 @@ module.exports = {
 	// @type     boolean
 	// @default  false
 	//
-	prefetch: false,
+	prefetch: true,
 
 	//
 	// Store and proxy prefetched images and thumbnails.
@@ -84,7 +84,7 @@ module.exports = {
 	// @type     boolean
 	// @default  false
 	//
-	prefetchStorage: false,
+	prefetchStorage: true,
 
 	//
 	// Prefetch URLs Image Preview size limit
@@ -105,7 +105,7 @@ module.exports = {
 	// @type     boolean
 	// @default  true
 	//
-	displayNetwork: true,
+	displayNetwork: false,
 
 	//
 	// Lock network
@@ -116,7 +116,7 @@ module.exports = {
 	// @type     boolean
 	// @default  false
 	//
-	lockNetwork: false,
+	lockNetwork: true,
 
 	//
 	// Hex IP
@@ -127,7 +127,7 @@ module.exports = {
 	// @type     boolean
 	// @default  false
 	//
-	useHexIp: false,
+	useHexIp: true,
 
 	//
 	// WEBIRC support
@@ -199,7 +199,7 @@ module.exports = {
 		// @type     string
 		// @default  "Freenode"
 		//
-		name: "Freenode",
+		name: "GLG IRC",
 
 		//
 		// Host
@@ -207,7 +207,7 @@ module.exports = {
 		// @type     string
 		// @default  "chat.freenode.net"
 		//
-		host: "chat.freenode.net",
+		host: process.env.IRC_SERVER,
 
 		//
 		// Port
@@ -215,7 +215,7 @@ module.exports = {
 		// @type     int
 		// @default  6697
 		//
-		port: 6697,
+		port: 6667,
 
 		//
 		// Password
@@ -231,7 +231,7 @@ module.exports = {
 		// @type     boolean
 		// @default  true
 		//
-		tls: true,
+		tls: false,
 
 		//
 		// Nick
@@ -397,14 +397,14 @@ module.exports = {
 		// @type     boolean
 		// @default  false
 		//
-		enable: false,
+		enable: true,
 
 		//
 		// LDAP server URL
 		//
 		// @type     string
 		//
-		url: "ldaps://example.com",
+		url: "ldaps://ldap.glgresearch.com",
 
 		//
 		// LDAP connection tls options (only used if scheme is ldaps://)
@@ -425,7 +425,7 @@ module.exports = {
 		//
 		// @type     string
 		//
-		// baseDN: "ou=accounts,dc=example,dc=com",
+		// baseDN: "dc=glgroup,dc=com",
 
 		//
 		// LDAP primary key
@@ -452,14 +452,14 @@ module.exports = {
 			//
 			// @type     string
 			//
-			rootDN: "cn=thelounge,ou=system-users,dc=example,dc=com",
+			rootDN: "fake",
 
 			//
 			// Password of the lounge LDAP system user
 			//
 			// @type     string
 			//
-			rootPassword: "1234",
+			rootPassword: "fake",
 
 			//
 			// LDAP filter
@@ -467,14 +467,14 @@ module.exports = {
 			// @type     string
 			// @default  "uid"
 			//
-			filter: "(objectClass=person)(memberOf=ou=accounts,dc=example,dc=com)",
+			filter: "",
 
 			//
 			// LDAP search base (search only within this node)
 			//
 			// @type     string
 			//
-			base: "dc=example,dc=com",
+			base: "dc=glgroup,dc=com",
 
 			//
 			// LDAP search scope
@@ -498,13 +498,13 @@ module.exports = {
 		// @type     boolean
 		// @default  false
 		//
-		ircFramework: false,
+		ircFramework: true,
 
 		// Enables logging raw IRC messages into each server window.
 		//
 		// @type     boolean
 		// @default  false
 		//
-		raw: false,
+		raw: true,
 	},
 };

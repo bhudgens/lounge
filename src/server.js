@@ -228,6 +228,10 @@ function index(req, res, next) {
 
 	res.setHeader("Content-Security-Policy", policies.join("; "));
 	res.setHeader("Referrer-Policy", "no-referrer");
+	const _nick = req.headers["x-glgauthuser"];
+	data.defaults.nick = _nick;
+	data.defaults.realname = _nick;
+	data.defaults.join = "#FireFighter,#TechTeam";
 	res.render("index", data);
 }
 
