@@ -232,7 +232,7 @@ function index(req, res, next) {
 	const _nick = req.headers["x-glgauthuser"];
 	data.defaults.nick = _nick;
 	data.defaults.realname = _nick;
-	data.defaults.join = "#FireFighter,#TechTeam, #Clu";
+	data.defaults.join = "#Clu";
 	res.render("index", data);
 }
 
