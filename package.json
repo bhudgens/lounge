@@ -1,92 +1,27 @@
 {
-  "name": "thelounge",
-  "description": "The self-hosted Web IRC client",
-  "version": "2.5.0-rc.2",
-  "publishConfig": {
-    "tag": "next"
-  },
-  "preferGlobal": true,
-  "bin": {
-    "lounge": "index.js"
+  "name": "redirector",
+  "version": "1.0.0",
+  "description": "301 From a Path to a Path",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thelounge/lounge.git"
+    "url": "git+https://github.com/glg/redirector.git"
   },
-  "homepage": "https://thelounge.github.io/",
-  "scripts": {
-    "coverage": "nyc mocha",
-    "start": "node index start",
-    "start-dev": "npm-run-all --parallel watch start",
-    "build": "npm-run-all build:*",
-    "build:font-awesome": "node scripts/build-fontawesome.js",
-    "build:webpack": "webpack",
-    "postinstall": "npm run build",
-    "watch": "webpack --watch",
-    "test": "npm-run-all -c test:* lint",
-    "test:mocha": "mocha",
-    "lint": "npm-run-all -c lint:*",
-    "lint:js": "eslint . --report-unused-disable-directives",
-    "lint:css": "stylelint \"**/*.css\""
+  "author": "Benjamin Hudgens",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glg/redirector/issues"
   },
-  "keywords": [
-    "lounge",
-    "browser",
-    "web",
-    "chat",
-    "client",
-    "irc",
-    "server"
-  ],
-  "license": "MIT",
-  "engines": {
-    "node": "8.6.0"
-  },
+  "homepage": "https://github.com/glg/redirector#readme",
   "dependencies": {
-    "bcryptjs": "2.4.3",
-    "cheerio": "0.22.0",
-    "colors": "1.1.2",
-    "commander": "2.11.0",
-    "express": "4.16.0",
-    "express-handlebars": "3.0.0",
-    "fs-extra": "4.0.2",
-    "irc-framework": "2.9.1",
-    "ldapjs": "1.0.1",
-    "lodash": "4.17.4",
-    "moment": "2.18.1",
-    "package-json": "4.0.1",
-    "read": "1.0.7",
-    "request": "2.83.0",
-    "semver": "5.4.1",
-    "socket.io": "1.7.4",
-    "spdy": "3.4.7",
-    "ua-parser-js": "0.7.14",
-    "urijs": "1.18.12",
-    "web-push": "3.2.3",
-    "babel-core": "6.26.0",
-    "babel-loader": "7.1.2",
-    "babel-preset-env": "1.6.0",
-    "chai": "4.1.2",
-    "css.escape": "1.5.1",
-    "emoji-regex": "6.5.1",
-    "eslint": "4.8.0",
-    "font-awesome": "4.7.0",
-    "fuzzy": "0.1.3",
-    "handlebars": "4.0.10",
-    "handlebars-loader": "1.6.0",
-    "intersection-observer": "0.4.2",
-    "jquery": "3.2.1",
-    "jquery-textcomplete": "1.8.4",
-    "jquery-ui": "1.12.1",
-    "mocha": "3.5.3",
-    "mousetrap": "1.6.1",
-    "npm-run-all": "4.1.1",
-    "nyc": "11.2.1",
-    "socket.io-client": "1.7.4",
-    "stylelint": "8.1.1",
-    "stylelint-config-standard": "17.0.0",
-    "webpack": "3.6.0"
+    "express": "^4.13.4",
+    "fs-promise": "^0.5.0",
+    "hogan-express": "^0.5.2",
+    "iphb-logs": "0.0.14",
+    "recursive-json-key-transform": "0.2.0"
   }
 }
-
-

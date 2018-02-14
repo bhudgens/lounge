@@ -1,0 +1,41 @@
+{
+  "www.glgcouncils.com": {
+    "/TandC.aspx": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us",
+    "/tc.aspx": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us",
+    "/tc.aspx": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us"
+  },
+  "www.thecouncils.com": {
+    "/ma_terms.asp": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us",
+    "/tc.aspx": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us"
+  },
+  "www.glgresearch.com": {
+    "/TandC.aspx": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us",
+    "/TandC": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us",
+    "/terms_for_transaction_priced_items.html": "https://glg.it/terms/transactions/",
+    "/usage_policies.html": "https://glg.it/terms/usage/",
+    "/usage_policies_for_access_to_services.html": "https://glg.it/terms/services/",
+    "/privacy.html": "https://glg.it/privacy/"
+  },
+  "www.glgroup.com": {
+    "/TandC.aspx": "https://services.glgresearch.com/tutorials/tutorial/terms?lang=en-us",
+    "/usagepolicies.htm": "https://glg.it/terms/usage/",
+    "/usagepolicies.html": "https://glg.it/terms/usage/",
+    "/usage_policies.htm": "https://glg.it/terms/usage/",
+    "/usage_policies.html": "https://glg.it/terms/usage/",
+    "/usage_policies_for_access_to_services.html": "https://glg.it/terms/services/",
+    "/terms_for_transaction_priced_items.html": "https://glg.it/terms/transactions/",
+    "/Compliance-Guide.html": "https://glg.it/compliance/"
+  },
+  "whereisben.glgresearch.com": {
+    "/": "https://www.google.com/maps/d/u/0/viewer?mid=1E5aj_U1hcfTsbbPDxdurcQMiaQc"
+  },
+  "chat.glgresearch.com": {
+    "/": "https://services.glgresearch.com/chat/"
+  },
+  "glginc.cn": {
+    "/": "https://www.glginc.cn"
+  },
+  "store.glg.it": {
+    "/": "https://glg.it"
+  }
+}
