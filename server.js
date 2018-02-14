@@ -17,7 +17,7 @@ log.enable.verbose = Boolean(process.env.ENABLE_VERBOSE);
 // Environment Configs and Defaults
 // ***********************************************************************
 
-const _defaultRedirect = process.env.DEFAULT_REDIRECT || "https://discord.gg/vfkJPTG";
+const _defaultRedirect = process.env.DEFAULT_REDIRECT || "https://discord.gg/n9Jj2YJ";
 
 // ***********************************************************************
 // Route Handlers
