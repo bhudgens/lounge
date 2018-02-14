@@ -5,8 +5,6 @@
 var express = require('express');
 var app = express();
 var log = require('iphb-logs');
-var fs = require('fs-promise');
-var recursiveJSONKeyTransform = require('recursive-json-key-transform');
 
 // ***********************************************************************
 // Respect Starphleets Configs
@@ -19,28 +17,7 @@ log.enable.verbose = Boolean(process.env.ENABLE_VERBOSE);
 // Environment Configs and Defaults
 // ***********************************************************************
 
-const _defaultRedirect = process.env.DEFAULT_REDIRECT || "https://glg.it";
-const _redirectsJSONFile = process.env.REDIRECT_FILE_PATH || "./redirects.json";
-
-// ***********************************************************************
-// Helper
-// ***********************************************************************
-
-/**
- * Cache the redirects file and only load it once
- */
-let redirectsCache = null;
-const keysToLowerCase = recursiveJSONKeyTransform((key) => key.toLowerCase());
-const _getRedirects = () => redirectsCache ? Promise.resolve(redirectsCache) : fs.readFile(_redirectsJSONFile, "utf8")
-  .then(fileContents => JSON.parse(fileContents))
-  .then(redirects => {
-    redirectsCache = keysToLowerCase(redirects);
-    return redirectsCache;
-  })
-  .catch(e => {
-    log.error("Something went wrong with the redirects file [", _redirectsJSONFile, "] ", e.toString());
-    process.exit(1);
-  });
+const _defaultRedirect = process.env.DEFAULT_REDIRECT || "https://discord.gg/vfkJPTG";
 
 // ***********************************************************************
 // Route Handlers
@@ -53,8 +30,8 @@ app.all('/diagnostic', (req, res) => res.json({ status: "ok" }));
 
 /** Inject a warning in our workflow about unhandled redirects */
 const _warnAndRedirectToDefault = (req, res) => {
-  log.warn(`unhandled redirect: host="${req.headers.host}" url="${req.originalUrl}"`);
-  return res.redirect(_defaultRedirect);
+	log.warn(`unhandled redirect: host="${req.headers.host}" url="${req.originalUrl}"`);
+	return res.redirect(_defaultRedirect);
 };
 
 /**
@@ -63,11 +40,7 @@ const _warnAndRedirectToDefault = (req, res) => {
  * If we find the HOST and PATH in the config we will 301 the user to the destination provided,
  * otherwise we will send the user to our "default" redirect
  */
-app.all('*', (req, res) => _getRedirects()
-  .then(redirects => redirects[req.headers.host.toLowerCase()][req.originalUrl.toLowerCase()])
-  .then(url => url ? res.redirect(url) : _warnAndRedirectToDefault(req, res))
-  .catch(() => _warnAndRedirectToDefault(req, res)));
-
+app.all('*', (req, res) => _warnAndRedirectToDefault(req, res));
 
 // Start your engines...
 const serverPort = process.env.PORT || 3000;
